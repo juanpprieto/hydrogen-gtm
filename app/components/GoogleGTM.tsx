@@ -5,7 +5,6 @@ export function GoogleGTM({id}: {id: string}) {
     <>
       {/* Initialize GTM container */}
       <Script
-        id="gtm-init"
         dangerouslySetInnerHTML={{
           __html: `
               dataLayer = window.dataLayer || [];
@@ -22,7 +21,6 @@ export function GoogleGTM({id}: {id: string}) {
 
       {/* Load GTM script */}
       <Script
-        suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){

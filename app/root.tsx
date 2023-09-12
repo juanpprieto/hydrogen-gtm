@@ -119,7 +119,7 @@ export default function App() {
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
-        <GoogleGTM googleGtmID={data.googleGtmID} />
+        <GoogleGTM id={data.googleGtmID} />
       </body>
     </html>
   );

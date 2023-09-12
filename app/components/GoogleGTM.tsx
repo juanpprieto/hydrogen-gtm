@@ -1,6 +1,6 @@
 import {Script} from '@shopify/hydrogen';
 
-export function GoogleGTM({googleGtmID}: {googleGtmID: string}) {
+export function GoogleGTM({id}: {id: string}) {
   return (
     <>
       {/* Initialize GTM container */}
@@ -15,7 +15,7 @@ export function GoogleGTM({googleGtmID}: {googleGtmID: string}) {
               };
 
               gtag('js', new Date());
-              gtag('config', "${googleGtmID}");
+              gtag('config', "${id}");
           `,
         }}
       />
@@ -35,7 +35,7 @@ export function GoogleGTM({googleGtmID}: {googleGtmID: string}) {
             var n=d.querySelector('[nonce]');
             n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce'));
             f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer', "${googleGtmID}")
+            })(window,document,'script','dataLayer', "${id}")
           `,
         }}
       />

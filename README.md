@@ -33,7 +33,8 @@ export async function loader({context}: LoaderArgs) {
 
   return defer(
     {
-      ...googleGtmID,
+      // ...
+      googleGtmID,
     },
     {headers},
   );

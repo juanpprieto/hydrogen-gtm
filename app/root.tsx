@@ -19,6 +19,7 @@ import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import {Layout} from '~/components/Layout';
+import {GoogleGTM} from '~/components/GoogleGTM';
 
 // This is important to avoid re-fetching root queries on sub-navigations
 export const shouldRevalidate: ShouldRevalidateFunction = ({
@@ -59,6 +60,7 @@ export async function loader({context}: LoaderArgs) {
   const {storefront, session, cart} = context;
   const customerAccessToken = await session.get('customerAccessToken');
   const publicStoreDomain = context.env.PUBLIC_STORE_DOMAIN;
+  const googleGtmID = context.env.PUBLIC_GOOGLE_GTM_ID;
 
   // validate the customer access token is valid
   const {isLoggedIn, headers} = await validateCustomerAccessToken(
@@ -92,6 +94,7 @@ export async function loader({context}: LoaderArgs) {
       header: await headerPromise,
       isLoggedIn,
       publicStoreDomain,
+      googleGtmID,
     },
     {headers},
   );
@@ -116,6 +119,7 @@ export default function App() {
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
         <LiveReload nonce={nonce} />
+        <GoogleGTM googleGtmID={data.googleGtmID} />
       </body>
     </html>
   );

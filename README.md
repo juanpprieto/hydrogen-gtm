@@ -5,6 +5,7 @@ while preserving Content Security Policy.
 
 - [Google Tag Manager](https://tagmanager.google.com/)
 - [Google Tag Manager CSP instructions](https://developers.google.com/tag-platform/security/guides/csp)
+- [Content Security Policy Reference](https://content-security-policy.com/)
 
 ## Instructions
 
